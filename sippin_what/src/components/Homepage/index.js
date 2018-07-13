@@ -9,9 +9,9 @@ const Homepage = props => (
   </Row>
 
   <Row center>
-  <Col s={2}></Col>
-  <Col s={8}><Input s={12} className="center" /></Col>
-  <Col s={2}></Col>
+  
+  <Col center s={8}><Input s={12} className="center" /></Col>
+  
   </Row>
   </div>
 );
