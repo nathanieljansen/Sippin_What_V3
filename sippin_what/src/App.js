@@ -15,7 +15,7 @@ class App extends Component {
         <HomepageContainer />
         <FooterContainer />
         <About />
-        < ContactFormContainer / >
+        <ContactFormContainer />
       </div>
     )
   }
