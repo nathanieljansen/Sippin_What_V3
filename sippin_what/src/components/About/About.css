@@ -19,11 +19,9 @@ h4 {
     text-align: center;
 }
 
-.row .col {
+/* .row .col {
  justify-content: center !important;
- /* background-color: transparent !important; */
-
-}
+} */
 
 .card {
     margin: 40px ! important;
