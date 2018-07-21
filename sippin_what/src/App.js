@@ -7,9 +7,13 @@ import About from "./components/About";
 // import ContactForm from './components/ContactForm';
 import ContactFormContainer from "./components/ContactForm/ContactFormContainer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import {MapContainer} from './components/Map/MapContainer';
-class App extends Component {   
 
+
+
+
+
+class App extends Component {
+  
   render() {
     return (
       
@@ -27,7 +31,7 @@ class App extends Component {
         
      
     )
-  }
+  } 
 }
 
 export default App;
