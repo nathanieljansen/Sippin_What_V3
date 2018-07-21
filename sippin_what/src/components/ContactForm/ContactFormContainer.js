@@ -2,7 +2,7 @@ import React, {
     Component
 } from 'react';
 
-import ContactForm from "./";
+import ContactForm from ".";
 import axios from "axios";
 
 
