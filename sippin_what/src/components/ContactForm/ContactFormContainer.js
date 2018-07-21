@@ -31,7 +31,7 @@ class ContactFormContainer extends Component {
 
     handleFormSubmit = event => {
         event.preventDefault();
-
+        
         // console.log("STATE" + this.state);
 
         const {
@@ -53,12 +53,13 @@ class ContactFormContainer extends Component {
 
         console.log(name, email, message + " was submitted ")
         console.log(message, email, name);
-        axios.post('/api/messages/', {
-                user
-            })
+        axios.post('/api/messages/', user)
             .then(res => {
                 console.log(res);
                 console.log(res.data);
+            })
+            .catch(err =>{
+                console.log(err);
             })
 
     }
