@@ -1,5 +1,6 @@
-body {
-    margin: 0;
+.AboutUsComponent {
+    margin-top: -90px;
+    /* margin-bottom: -90px; */
     padding: 0;
     background-image: url("./images/vino.jpg");
     background-position: center;
@@ -12,16 +13,19 @@ body {
 
 h3 {
     text-align: center;
-    color: #6d0d0d;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.23)
 }
 
 h4 {
     text-align: center;
 }
 
+.us{
+    margin-top: 100px
+}
 
+.card{
+    width: 90% !important;
 
-.card {
-    margin: 40px ! important;
-    /* height: 350px !important; */
 }

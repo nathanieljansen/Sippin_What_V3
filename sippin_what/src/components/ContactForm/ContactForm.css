@@ -1,6 +1,6 @@
-body {
-  
-    /* background-image:url("https://images.pexels.com/photos/39605/wineglass-wine-glass-wine-tasting-39605.jpeg?cs=srgb&dl=macro-people-stemware-39605.jpg&fm=jpg"); */
+.ContactFormComponent{
+   margin-top: -90px;
+    background-image:url("https://images.pexels.com/photos/39605/wineglass-wine-glass-wine-tasting-39605.jpeg?cs=srgb&dl=macro-people-stemware-39605.jpg&fm=jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -9,10 +9,22 @@ body {
     flex-direction: column;
 };
 
+
+
 form {
-    color: rgba(0, 0, 0, 0.507);
+    background-color: rgba(0, 0, 0, 0.507);
     color: black;
 }
+
 .input-field label{
     color: black;
+}
+
+.contactForm{
+    margin-top: 150px;
+    background-color: rgba(0, 0, 0, 0.507);
+}
+
+label {
+    color: white !important;
 }

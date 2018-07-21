@@ -6,20 +6,23 @@ import About from "./components/About";
 // import Homepage from '.components/Homepage';
 // import ContactForm from './components/ContactForm';
 import ContactFormContainer from "./components/ContactForm/ContactFormContainer";
-import { BrowserRouter as Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 class App extends Component {   
 
   render() {
     return (
-     
-     
+      
+     <div>
+      <HeaderContainer />
+      < Router >
         <Switch>
-          <div>
-            < Route path="/home" component={HomepageContainer} />
+            < Route path="//" component={HomepageContainer} />
             < Route path="/about" component={About} />
             < Route path="/contact" component={ContactFormContainer} />
-            </div>
         </Switch>
+        </Router>
+        <FooterContainer />
+        </div>
         
      
     )

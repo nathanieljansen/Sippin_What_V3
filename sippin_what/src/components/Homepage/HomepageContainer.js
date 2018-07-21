@@ -11,10 +11,19 @@ export default class HomepageContainer extends React.Component {
 
   getInput = input => {
     console.log(input)
-}
+    this.setState({
+      foodInput: input
+    })
+  }
+
+  getResults = () => {
+    console.log(this.state.foodInput)
+  }
 
   render() {
-    return <Homepage  getInput={this.getInput}/>
+    return <Homepage 
+      getInput={this.getInput} 
+      getResults={this.getResults} />
   };
 };
 

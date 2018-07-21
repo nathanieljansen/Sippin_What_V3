@@ -32,8 +32,6 @@ handleInputChange = event => {
 handleFormSubmit = event => {
     event.preventDefault();
 
-
-
     const {
         name,
         email,
@@ -66,7 +64,7 @@ handleFormSubmit = event => {
         } = this.state;
 
         return ( 
-            <div > 
+            <div className="ContactFormComponent" > 
 
             {shouldRenderContactForm && //passing these below/can change to DynamicForm
             <ContactForm
@@ -75,9 +73,6 @@ handleFormSubmit = event => {
                 handleInputChange = {this.handleInputChange}
                 />
             }
-
-           
-
             </div>
         );
     }

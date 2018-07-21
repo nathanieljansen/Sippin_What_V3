@@ -4,10 +4,10 @@ import "./Header.css";
 
 const Header = props => (
 <div>
-<Navbar className="navBar" brand='Sippin What' right>
-  <NavItem href='get-started.html'>Meet the Team</NavItem>
-  <NavItem href='components.html'>Contact Us</NavItem>
-  <NavItem href='components.html'>Login</NavItem>
+<Navbar className="navBar" brand='Sippin What' href='/'right>
+  <NavItem href='/about'>Meet the Team</NavItem>
+  <NavItem href='/contact'>Contact Us</NavItem>
+  <NavItem href='/login'>Login</NavItem>
 </Navbar>
 
 </div>
