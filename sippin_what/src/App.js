@@ -3,11 +3,8 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import HomepageContainer from "./components/Homepage/HomepageContainer";
 import FooterContainer from "./components/Footer/FooterContainer";
 import About from "./components/About";
-// import Homepage from '.components/Homepage';
-// import ContactForm from './components/ContactForm';
 import ContactFormContainer from "./components/ContactForm/ContactFormContainer";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import {MapContainer} from './components/Map/MapContainer';
 class App extends Component {   
 
   render() {
