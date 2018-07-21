@@ -46,8 +46,8 @@ module.exports = function (app) {
 
   app.get("/api/allWines", function (req, res) {
     console.log("We hit the route SERVER.js file!!");
-    db.foodpairings.findAll().then( (dbResponse) =>{
-  
+    db.foodpairings.findAll().then((dbResponse) => {
+
       console.log(dbResponse)
       res.json(dbResponse);
     });
@@ -62,38 +62,38 @@ module.exports = function (app) {
     }).then(response => {
       res.json(response)
     })
-   
+
   })
 
   app.get("/api/allWines/age", function (req, res) {
-  db.foodpairings.findAll({
-    attributes: ['age', [Sequelize.fn('COUNT', Sequelize.col('age')), 'ageCount']],
-    group: ['age'],
-    raw: true
-  }).then(response => {
-    res.json(response)
+    db.foodpairings.findAll({
+      attributes: ['age', [Sequelize.fn('COUNT', Sequelize.col('age')), 'ageCount']],
+      group: ['age'],
+      raw: true
+    }).then(response => {
+      res.json(response)
+    })
   })
-})
 
-app.get("/api/allWines/food", function (req, res) {
-  db.foodpairings.findAll({
-    attributes: ['food', [Sequelize.fn('COUNT', Sequelize.col('food')), 'foodCount']],
-    group: ['food'],
-    raw: true
-  }).then(response => {
-    res.json(response)
+  app.get("/api/allWines/food", function (req, res) {
+    db.foodpairings.findAll({
+      attributes: ['food', [Sequelize.fn('COUNT', Sequelize.col('food')), 'foodCount']],
+      group: ['food'],
+      raw: true
+    }).then(response => {
+      res.json(response)
+    })
   })
-})
 
-app.get("/api/allWines/firstmatch", function (req, res) {
-  db.foodpairings.findAll({
-    attributes: ['first_match', [Sequelize.fn('COUNT', Sequelize.col('first_match')), 'first_matchCount']],
-    group: ['first_match'],
-    raw: true
-  }).then(response => {
-    res.json(response)
+  app.get("/api/allWines/firstmatch", function (req, res) {
+    db.foodpairings.findAll({
+      attributes: ['first_match', [Sequelize.fn('COUNT', Sequelize.col('first_match')), 'first_matchCount']],
+      group: ['first_match'],
+      raw: true
+    }).then(response => {
+      res.json(response)
+    })
   })
-})
 
 
   app.get("/api/pairingRecord", function (req, res) {
@@ -138,8 +138,10 @@ app.get("/api/allWines/firstmatch", function (req, res) {
   })
 
   app.post('/api/messages/', function (req, res) {
-    console.log("i'm a log");
-    console.log(db.Messages, "this is db");
+    // console.log("i'm a log");
+    // console.log(db.Messages, "this is db");
+    // console.log(req.body)
+    // res.send('ok');
     // edited burger create to add in a burger_name
     db.Messages.create({
         name: req.body.name,
@@ -151,8 +153,13 @@ app.get("/api/allWines/firstmatch", function (req, res) {
         // log the result to our terminal/bash window
         console.log(newMessage);
         // redirect
-
-      });
+        res.send(newMessage);
+        // alert("Message Sent!");
+        // window.location.reload();
+      })
+      .catch(function (err) {
+        console.log(err);
+      })
 
     // //working on foodpairing part here://
     // pairInfo("../foodpairing.js", function(data){});
@@ -160,7 +167,7 @@ app.get("/api/allWines/firstmatch", function (req, res) {
 
   app.get('/api/messagesall', function (req, res) {
     console.log("all the things")
-    db.Messages.findAll().then(function(thingdb) {
+    db.Messages.findAll().then(function (thingdb) {
       res.json(thingdb)
     })
   })
