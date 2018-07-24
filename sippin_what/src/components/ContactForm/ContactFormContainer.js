@@ -13,8 +13,6 @@ class ContactFormContainer extends Component {
             name: '',
             email: '',
             message: '',
-            password: '',
-            is21: false,
             shouldRenderContactForm: true,
         }
     }
@@ -29,7 +27,6 @@ class ContactFormContainer extends Component {
 
 handleFormSubmit = event => {
     event.preventDefault();
-
     const {
         name,
         email,
@@ -41,11 +38,7 @@ handleFormSubmit = event => {
             email: email,
             message: message
         };
-        // const user = {
-        //   name: this.state.name,
-        //   email: this.state.email,
-        //   message: this.state.message
-        // };
+        
 
         console.log(name, email, message + " was submitted ")
         console.log(message, email, name);
@@ -67,7 +60,7 @@ handleFormSubmit = event => {
         } = this.state;
 
         return ( 
-            <div className="ContactFormComponent" > 
+            <div> 
 
             {shouldRenderContactForm && //passing these below/can change to DynamicForm
             <ContactForm

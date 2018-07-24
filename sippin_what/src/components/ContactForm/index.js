@@ -10,10 +10,11 @@ const ContactForm = (props) => {
     console.log(props)
 
     return (
-    <form  className="contactForm" onSubmit={props.handleFormSubmit}>
-        <div className="container ">
+        <div className="ContactFormComponent">
+    <form  className="contactForm container" onSubmit={props.handleFormSubmit}>
+        <div className="container">
             <Row>
-                <Input name="name"  s={12} label="Name"
+                <Input name="name" s={12} label="Name"
                     onChange={(e) => props.handleInputChange(e) }/>
             </Row>
             <Row >
@@ -31,6 +32,7 @@ const ContactForm = (props) => {
         </div>
 
     </form>
+    </div>
     );
 };
 

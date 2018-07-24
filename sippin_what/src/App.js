@@ -4,15 +4,13 @@ import HomepageContainer from "./components/Homepage/HomepageContainer";
 import FooterContainer from "./components/Footer/FooterContainer";
 import About from "./components/About";
 import ContactFormContainer from "./components/ContactForm/ContactFormContainer";
+import LoginContainer from "./components/Login/LoginContainer"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-class App extends Component {   
-
-
-
+import SignUpContainer from "./components/SignUp/SignUpContainer";
 
 
 class App extends Component {
-  
+
   render() {
     return (
       
@@ -23,6 +21,16 @@ class App extends Component {
             < Route path="//" component={HomepageContainer} />
             < Route path="/about" component={About} />
             < Route path="/contact" component={ContactFormContainer} />
+             < Route path = "/login"
+             component = {
+               LoginContainer
+             }
+             />
+             < Route path = "/signup"
+             component = {
+               SignUpContainer
+             }
+             />
         </Switch>
         </Router>
         <FooterContainer />
