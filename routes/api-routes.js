@@ -75,7 +75,7 @@ module.exports = function (app) {
     })
   })
 
-  app.get("/api/allWines/food", function (req, res) {
+  app.get("/api/food", function (req, res) {
     db.foodpairings.findAll({
       attributes: ['food', [Sequelize.fn('COUNT', Sequelize.col('food')), 'foodCount']],
       group: ['food'],
