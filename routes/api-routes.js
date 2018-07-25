@@ -172,7 +172,7 @@ app.get("/api/allWines/firstmatch", function (req, res) {
         "Cache-Control": "no-cache"}
     }).then(response => {
       console.log("saucy greek")
-      res.send("success")
+      res.status(response.status).json(response.data)
       console.log(req.body)
       
       })
