@@ -6,7 +6,7 @@ var session = require("express-session");
 var passport = require("./config/passport");
 // const nodemailer = require('nodemailer');
 const sequelize = require("sequelize");
-const thisThing = ("nodemailer")
+
 
 
 var PORT = process.env.PORT || 8080;
@@ -94,6 +94,10 @@ module.exports = (app) => {
 
 app.get("/api/pairingRecord", (req, res) => {
     res.json("pairingRecord");
+});
+
+app.get("/api/food", (req, res) => {
+    res.json("food");
 });
 
 // app.get("/api/allWines", (req, res) => {

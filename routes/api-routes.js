@@ -46,8 +46,8 @@ module.exports = function (app) {
 
   app.get("/api/allWines", function (req, res) {
     console.log("We hit the route SERVER.js file!!");
-    db.foodpairings.findAll().then( (dbResponse) =>{
-  
+    db.foodpairings.findAll().then((dbResponse) => {
+
       console.log(dbResponse)
       res.json(dbResponse);
     });
@@ -62,38 +62,49 @@ module.exports = function (app) {
     }).then(response => {
       res.json(response)
     })
-   
+
   })
 
   app.get("/api/allWines/age", function (req, res) {
-  db.foodpairings.findAll({
-    attributes: ['age', [Sequelize.fn('COUNT', Sequelize.col('age')), 'ageCount']],
-    group: ['age'],
-    raw: true
-  }).then(response => {
-    res.json(response)
+    db.foodpairings.findAll({
+      attributes: ['age', [Sequelize.fn('COUNT', Sequelize.col('age')), 'ageCount']],
+      group: ['age'],
+      raw: true
+    }).then(response => {
+      res.json(response)
+    })
   })
-})
 
-app.get("/api/allWines/food", function (req, res) {
-  db.foodpairings.findAll({
-    attributes: ['food', [Sequelize.fn('COUNT', Sequelize.col('food')), 'foodCount']],
-    group: ['food'],
-    raw: true
-  }).then(response => {
-    res.json(response)
+  app.get("/api/allWines/food", function (req, res) {
+    db.foodpairings.findAll({
+      attributes: ['food', [Sequelize.fn('COUNT', Sequelize.col('food')), 'foodCount']],
+      group: ['food'],
+      raw: true
+    }).then(response => {
+      res.json(response)
+    })
   })
-})
 
-app.get("/api/allWines/firstmatch", function (req, res) {
-  db.foodpairings.findAll({
-    attributes: ['first_match', [Sequelize.fn('COUNT', Sequelize.col('first_match')), 'first_matchCount']],
-    group: ['first_match'],
-    raw: true
-  }).then(response => {
-    res.json(response)
+  app.get("/api/food", function (req, res) {
+    db.foodpairings.findAll({
+      attributes: ['food', [Sequelize.fn('COUNT', Sequelize.col('food')), 'foodCount']],
+      group: ['food'],
+      raw: true
+    }).then(response => {
+      res.json(response)
+    })
   })
-})
+
+
+  app.get("/api/allWines/firstmatch", function (req, res) {
+    db.foodpairings.findAll({
+      attributes: ['first_match', [Sequelize.fn('COUNT', Sequelize.col('first_match')), 'first_matchCount']],
+      group: ['first_match'],
+      raw: true
+    }).then(response => {
+      res.json(response)
+    })
+  })
 
 
   app.get("/api/pairingRecord", function (req, res) {
@@ -160,23 +171,26 @@ app.get("/api/allWines/firstmatch", function (req, res) {
 
   app.get('/api/messagesall', function (req, res) {
     console.log("all the things")
-    db.Messages.findAll().then(function(thingdb) {
+    db.Messages.findAll().then(function (thingdb) {
       res.json(thingdb)
     })
   })
 
   app.get("/api/getDrunk", function (req, res) {
     const foodInput = req.query.foodInput
-    axios.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/wine/pairing?food=" + foodInput, {headers:{
-      "X-Mashape-Key": "aVuMKS8FG3mshVQlO5dNdPxZQCdrp1FpzUDjsnZtHrg9bA3DEP",
-        "Cache-Control": "no-cache"}
+    axios.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/wine/pairing?food=" + foodInput, {
+      headers: {
+        "X-Mashape-Key": "aVuMKS8FG3mshVQlO5dNdPxZQCdrp1FpzUDjsnZtHrg9bA3DEP",
+        "Cache-Control": "no-cache"
+      }
     }).then(response => {
       console.log("saucy greek")
       res.status(response.status).json(response.data)
       console.log(req.body)
-      
-      })
+
     })
+  })
 
 
-};
+
+}

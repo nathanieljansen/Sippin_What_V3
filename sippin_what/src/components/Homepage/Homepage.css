@@ -6,7 +6,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
-  min-height: 100vh;
+  min-height: 105vh;
   flex-direction: column;
 }
 
@@ -16,6 +16,7 @@
 
 .food {
   background: rgba(0, 0, 0, 0.5) !important;
+  color: white;
 }
 
 .submitButton{
