@@ -14,7 +14,8 @@ const Homepage = ({
         <div>
         <form >
         <Col s={8}>
-        <Input onChange={e => getInput(e.target.value)} s={12} name="food" className="food" type="text" value={foodInput} label="Enter a food and find a wine" />
+        <Input onChange={e => getInput(e.target.value)} s={12} name="food" className="food" type="text" value={foodInput} 
+         label="Enter a food and find a wine" />
         </Col>
         <Col className="submitButton" s={4}>
         <Button onClick={e => getResults( e.preventDefault())}  onKeyPress={e => getResults( e.preventDefault())} s={12} waves='light'  type="submit"  value="submit">Get to   Sippin</Button>

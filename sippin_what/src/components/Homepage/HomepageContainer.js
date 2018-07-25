@@ -6,7 +6,7 @@ export default class HomepageContainer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      foodInput : " "
+      foodInput : ""
     }
   }
 
@@ -27,7 +27,7 @@ export default class HomepageContainer extends React.Component {
             console.log(res);
             console.log(res.data);
             this.setState({
-              foodInput: " "
+              foodInput: ""
             })
             console.log(this.state)
           })
