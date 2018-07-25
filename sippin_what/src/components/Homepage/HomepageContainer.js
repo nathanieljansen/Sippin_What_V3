@@ -30,7 +30,7 @@ export default class HomepageContainer extends React.Component {
   getResults = () => {
     console.log(this.state.foodInput)
     console.log(" was submitted ")
-      axios.get('/api/getDrunk/')
+      axios.get('/api/getDrunk?foodInput=' + this.state.foodInput)
           .then(res => {
               console.log(res);
               console.log(res.data);
