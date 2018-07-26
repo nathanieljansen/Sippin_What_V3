@@ -10,28 +10,28 @@ var config = require(__dirname + '/../config/config.json')[env];
 var db = {};
 
 module.exports =  (sequelize, DataTypes) => {
-    var foodpairings = sequelize.define("foodpairings", {
-        age: {
-            type: DataTypes.STRING,
-            allowNull: false
-        },
-        zip: {
-            type: DataTypes.STRING,
-            allowNull: true
-        },
-        food: {
+    var foodPairings = sequelize.define("foodPairings", {
+        // age: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false
+        // },
+        // zip: {
+        //     type: DataTypes.STRING,
+        //     allowNull: true
+        // },
+        foodInput: {
             type: DataTypes.STRING,
             // allowNull: false
         },
-        paired: {
-            type: DataTypes.BOOLEAN,
-            default: true
-        },
-         description: {
-             type: DataTypes.STRING,
-             allowNull: false,
-             max_allowed_packet: true
-         },
+        // paired: {
+        //     type: DataTypes.BOOLEAN,
+        //     default: true
+        // },
+        //  description: {
+        //      type: DataTypes.STRING,
+        //      allowNull: false,
+        //      max_allowed_packet: true
+        //  },
 
         first_match: {
             type: DataTypes.STRING,
@@ -46,5 +46,6 @@ module.exports =  (sequelize, DataTypes) => {
             // allowNull: false
         },
     });
-    return foodpairings;
+    return foodPairings;
 };
+

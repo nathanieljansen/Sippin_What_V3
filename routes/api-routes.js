@@ -129,24 +129,24 @@ module.exports = function (app) {
   });
 
 
-  app.post("/api/allWines", function (req, res) {
-    console.log("Hit it", req.body);
-    var saveFormat = {
-      age: req.body.age,
-      zip: req.body.zip,
-      food: req.body.food,
-      paired: true,
-      first_match: req.body.pairingInfo.productMatches[0].title,
-      second_match: req.body.pairingInfo.productMatches[1],
-      description: req.body.pairingInfo.pairingText
-    }
-    console.log("Damn Gurl", saveFormat)
-    db.foodpairings.create(saveFormat).then(function (dbResponse) {
+  // app.post("/api/allWines", function (req, res) {
+  //   console.log("Hit it", req.body);
+  //   var saveFormat = {
+  //     age: req.body.age,
+  //     zip: req.body.zip,
+  //     food: req.body.food,
+  //     paired: true,
+  //     first_match: req.body.pairingInfo.productMatches[0].title,
+  //     second_match: req.body.pairingInfo.productMatches[1],
+  //     description: req.body.pairingInfo.pairingText
+  //   }
+  //   console.log("Damn Gurl", saveFormat)
+  //   db.foodpairings.create(saveFormat).then(function (dbResponse) {
 
-      // console.log(dbResponse)
-    });
-    // res.send("all good");
-  })
+  //     // console.log(dbResponse)
+  //   });
+  //   // res.send("all good");
+  // })
 
   app.post('/api/messages/', function (req, res) {
     console.log("i'm a log");
@@ -178,18 +178,26 @@ module.exports = function (app) {
 
   app.get("/api/getDrunk", function (req, res) {
     const foodInput = req.query.foodInput
-    axios.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/wine/pairing?food=" + foodInput, {
-      headers: {
-        "X-Mashape-Key": "aVuMKS8FG3mshVQlO5dNdPxZQCdrp1FpzUDjsnZtHrg9bA3DEP",
-        "Cache-Control": "no-cache"
-      }
-    }).then(response => {
-      console.log("saucy greek")
-      res.status(response.status).json(response.data)
-      console.log(req.body)
-
+      axios.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/wine/pairing?food=" + foodInput, {
+        headers: {
+          "X-Mashape-Key": "aVuMKS8FG3mshVQlO5dNdPxZQCdrp1FpzUDjsnZtHrg9bA3DEP",
+          "Cache-Control": "no-cache"
+        }
+      }).then(response => {
+        console.log("saucy greek", response)
+         db.foodPairings.create({
+           // zip: 
+           foodInput: foodInput,
+           // paired: req.body.
+           first_match: response.data.productMatches[0].title,
+          //  second_match: req.body.productMatches[1].title,
+           description: response.data.pairingText
+         }).then(result => {
+          res.status(200).json(response.data);
+         })
+         ///.catch
+      console.log("Hit it")
     })
-  })
 
 
 

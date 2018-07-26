@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "proxy": {
     "/api": {
-      "target": "http://localhost:8080",
+      "target": "http://localhost:8080/",
       "secure": false
     }
   },
