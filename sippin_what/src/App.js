@@ -7,6 +7,7 @@ import ContactFormContainer from "./components/ContactForm/ContactFormContainer"
 import LoginContainer from "./components/Login/LoginContainer"
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignUpContainer from "./components/SignUp/SignUpContainer";
+import WinePairingContainer from "./components/WinePairings/WinePairingContainer"
 
 
 class App extends Component {
