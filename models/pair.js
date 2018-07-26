@@ -15,10 +15,10 @@ module.exports =  (sequelize, DataTypes) => {
         //     type: DataTypes.STRING,
         //     allowNull: false
         // },
-        // zip: {
-        //     type: DataTypes.STRING,
-        //     allowNull: true
-        // },
+        zip_code: {
+            type: DataTypes.STRING,
+            allowNull: true
+        },
         foodInput: {
             type: DataTypes.STRING,
             // allowNull: false
@@ -37,10 +37,10 @@ module.exports =  (sequelize, DataTypes) => {
             type: DataTypes.STRING,
         // mmmmSuperSexy_match
         },
-        second_match: {
-            type: DataTypes.STRING,
-            // mmmmSuperSexy_match
-        },
+        // second_match: {
+        //     type: DataTypes.STRING,
+        //     // mmmmSuperSexy_match
+        // },
         description: {
             type: DataTypes.STRING(2000),
             // allowNull: false

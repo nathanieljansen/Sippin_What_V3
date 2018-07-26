@@ -30,6 +30,9 @@ export default class HeaderContainer extends React.Component {
               types
             }) => types.includes('postal_code')).long_name;
             console.log(address);
+
+            localStorage.setItem("zip_code", address)
+
           },
           error => {
             console.error(error);

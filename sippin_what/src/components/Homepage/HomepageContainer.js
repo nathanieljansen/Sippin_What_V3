@@ -21,7 +21,8 @@ export default class HomepageContainer extends React.Component {
 
   getResults = () => {
     console.log(this.state.foodInput)
-      axios.get('/api/getDrunk?foodInput=' + this.state.foodInput)
+    console.log("zip_code", localStorage.getItem("zip_code"))
+      axios.get('/api/getDrunk?foodInput=' + this.state.foodInput + "&zip_code=" + localStorage.getItem("zip_code"))
           .then(res => {
             console.log(this.state.foodInput)
             console.log(res);

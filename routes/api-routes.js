@@ -169,14 +169,9 @@ module.exports = function (app) {
     // pairInfo("../foodpairing.js", function(data){});
   });
 
-  app.get('/api/messagesall', function (req, res) {
-    console.log("all the things")
-    db.Messages.findAll().then(function (thingdb) {
-      res.json(thingdb)
-    })
-  })
 
   app.get("/api/getDrunk", function (req, res) {
+    console.log(req.query, "paramssss")
     const foodInput = req.query.foodInput
       axios.get("https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/wine/pairing?food=" + foodInput, {
         headers: {
@@ -184,9 +179,11 @@ module.exports = function (app) {
           "Cache-Control": "no-cache"
         }
       }).then(response => {
-        console.log("saucy greek", response)
+      //  console.log("saucy greek", response.data)
+
+       if (response.data.pairedWines) {
          db.foodPairings.create({
-           // zip: 
+           zip_code: req.query.zip_code,
            foodInput: foodInput,
            // paired: req.body.
            first_match: response.data.productMatches[0].title,
@@ -194,11 +191,10 @@ module.exports = function (app) {
            description: response.data.pairingText
          }).then(result => {
           res.status(200).json(response.data);
-         })
-         ///.catch
-      console.log("Hit it")
+         })    
+        }  else {
+          res.send("No pairing found")
+        }
     })
-
-
-
+  })
 }
