@@ -28,8 +28,13 @@ export default class HomepageContainer extends React.Component {
             console.log(res);
             console.log(res.data);
             this.setState({
-              foodInput: ""
-            })
+              foodInput: "",
+              foodPairing: res.data.pairingText,
+             winePairing: res.data.productMatches[0].title,
+             winePairingImage: res.data.productMatches[0].imageUrl
+               })
+           console.log(res.data.productMatches[0].imageUrl)
+          
             console.log(this.state)
           })
           .catch(err =>{
@@ -39,6 +44,9 @@ export default class HomepageContainer extends React.Component {
 
   render() {
     return<Homepage
+    foodPairing={this.state.foodPairing}
+   winePairing={this.state.winePairing}
+   winePairingImage={this.state.winePairingImage}
     foodInput={this.state.foodInput}
     handleFormSubmit = {this.handleFormSubmit}
       getInput={this.getInput} 

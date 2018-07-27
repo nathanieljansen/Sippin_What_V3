@@ -5,7 +5,10 @@ import "./Homepage.css";
 const Homepage = ({
     getInput,
     getResults,
-    foodInput
+    foodInput,
+    foodPairing,
+    winePairing,
+    winePairingImage
   }) => {
 
   return ( 
@@ -23,6 +26,21 @@ const Homepage = ({
         </form>
         </div>
       </Row>
+      <Row className="container">
+      <Row>
+        <Col s={12} className="foodPairing">
+          {winePairing}
+        </Col>
+        </Row>
+        <Row>
+        <Col s={12} className="winePairingImage">
+        <img src={winePairingImage} />
+        </Col>
+        </Row>
+        <Col s={12} className="foodPairing">
+          {foodPairing}
+        </Col>
+         </Row> 
       
     </div>
   
