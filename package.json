@@ -1,6 +1,9 @@
 {
   "name": "sippin_what_v3",
   "version": "1.0.0",
+  "engines": {
+    "node": "9.4.0"
+  },
   "description": "",
   "main": "server.js",
   "dependencies": {
