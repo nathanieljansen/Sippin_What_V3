@@ -14,10 +14,6 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-         <link rel="manifest" href="%PUBLIC_URL%/manifest.json"/>
-        <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico"/>
-        </div>,
      <div>
       <HeaderContainer />
       < Router >
