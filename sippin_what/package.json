@@ -1,9 +1,6 @@
 {
   "name": "sippin_what",
   "version": "0.1.0",
-  "engines": {
-    "node": "8.9.4"
-  },
   "proxy": {
     "/api": {
       "target": "http://localhost:8080/",

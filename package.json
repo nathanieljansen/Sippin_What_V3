@@ -22,8 +22,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node server.js",
-    "dev": "concurrently \"nodemon server.js\" \"cd sippin_what && yarn start\"",
+     "start": "node server.js",
+    "dev": "nodemon server.js\" \"cd sippin_what && yarn start\"",
     "heroku-prebuild": "rm -rf public && mkdir public && cd sippin_what && npm run build"
   },
   "repository": {
