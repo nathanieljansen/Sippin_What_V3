@@ -3,7 +3,7 @@ import {Navbar, NavItem} from 'react-materialize'
 import "./Header.css";
 
 
-const Header = props => (
+const Header = () => (
  
 <div>
 <Navbar className="navBar" brand='Sippin What' href='/'right>
