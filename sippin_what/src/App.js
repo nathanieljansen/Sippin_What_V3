@@ -22,15 +22,15 @@ class App extends Component {
       <HeaderContainer />
       < Router >
         <Switch>
-            < Route path="//" component={HomepageContainer} />
-            < Route path="/about" component={About} />
-            < Route path="/contact" component={ContactFormContainer} />
-             < Route path = "/login"
+            < Route exact path="/" component={HomepageContainer} />
+            < Route exact path="/about" component={About} />
+            < Route exact path="/contact" component={ContactFormContainer} />
+             < Route exact path = "/login"
              component = {
                LoginContainer
              }
              />
-             < Route path = "/signup"
+             < Route exact path = "/signup"
              component = {
                SignUpContainer
              }
